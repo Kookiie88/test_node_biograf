@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "sass:watch": "sass --no-source-map --watch src/main.scss lib/main.css",
     "sass:compile": "sass --no-source-map src/main.scss lib/main.css",
