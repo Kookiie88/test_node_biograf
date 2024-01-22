@@ -8,14 +8,21 @@ app.set("view engine", "handlebars");
 app.set("views", "./templates");
 
 const menu = [
-  { name: "index", url: "/" },
-  { name: "aboutus", url: "/aboutus" },
-  { name: "filmer", url: "/filmer" },
-  { name: "newsevents", url: "/newsevents" },
+  { name: "About us", url: "/aboutus" },
+  { name: "Filmer", url: "/filmer" },
+  { name: "Movies", url: "/movies" },
+  { name: "News & events", url: "/newsevents" },
 ];
 
 async function renderPage(response, page) {
-  response.render(page);
+  response.render(page, {
+    menuLink: menu.map((link) => {
+      return {
+        label: link.name,
+        link: link.url,
+      };
+    }),
+  });
 }
 
 app.get("/", async (request, response) => {
@@ -24,6 +31,10 @@ app.get("/", async (request, response) => {
 
 app.get("/aboutus", async (request, response) => {
   renderPage(response, "aboutus");
+});
+
+app.get("/movies", async (request, response) => {
+  renderPage(response, "newsevents");
 });
 
 app.get("/filmer", async (request, response) => {
@@ -36,4 +47,4 @@ app.get("/newsevents", async (request, response) => {
 
 app.use("/lib", express.static("./lib"));
 app.use("/assets", express.static("./assets"));
-app.listen(3080);
+app.listen(5080);
