@@ -22,3 +22,22 @@ $colorFive: #ffffff;
     @content;
   }
 }
+
+@mixin newsButton() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $colorFive;
+  background-color: $colorThree;
+  border-radius: 8px;
+  height: 35px;
+  width: 120px;
+  font-size: 0.9em;
+  margin: 0px 40px;
+  box-shadow: 1px 1px 5px $colorOne;
+  border: none;
+
+  @media screen and (min-width: $medium) {
+    cursor: pointer;
+  }
+}

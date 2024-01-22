@@ -9,7 +9,7 @@
     "sass:compile": "sass --no-source-map src/main.scss lib/main.css",
     "open-cypress": "cypress open",
     "test": "cypress run",
-    "dev": "nodemon ."
+    "start": "nodemon ."
   },
   "author": "",
   "license": "ISC",
