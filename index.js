@@ -9,7 +9,6 @@ app.set("views", "./templates");
 
 const menu = [
   { name: "About us", url: "/aboutus" },
-  { name: "Filmer", url: "/filmer" },
   { name: "News & events", url: "/newsevents" },
 ];
 
@@ -32,14 +31,10 @@ app.get("/aboutus", async (request, response) => {
   renderPage(response, "aboutus");
 });
 
-app.get("/filmer", async (request, response) => {
-  renderPage(response, "filmer");
-});
-
 app.get("/newsevents", async (request, response) => {
   renderPage(response, "newsevents");
 });
 
 app.use("/static", express.static("./static"));
-app.use("/assets", express.static("./assets"));
+app.use("/src", express.static("./src"));
 app.listen(5080);

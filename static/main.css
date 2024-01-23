@@ -587,7 +587,7 @@ body {
   border: none;
   background-size: cover;
   background-color: transparent;
-  background-image: url("assets/hamburgerButtonClose.png");
+  background-image: url("src/hamburgerButtonClose.png");
   align-self: flex-end;
   padding: 10px;
 }
