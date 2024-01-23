@@ -1,6 +1,6 @@
 import express from "express";
 import { engine } from "express-handlebars";
-import fs from "fs/promises";
+import { getMovie, getMovies } from "./src/movies.js";
 
 const app = express();
 app.engine("handlebars", engine());
@@ -12,7 +12,7 @@ const menu = [
   { name: "News & events", url: "/newsevents" },
 ];
 
-async function renderPage(response, page) {
+async function renderPage(response, page, extraData = {}) {
   response.render(page, {
     menuLink: menu.map((link) => {
       return {
@@ -20,11 +20,13 @@ async function renderPage(response, page) {
         link: link.url,
       };
     }),
+    ...extraData,
   });
 }
 
 app.get("/", async (request, response) => {
-  renderPage(response, "index");
+  const movies = await getMovies();
+  renderPage(response, "index", { movies });
 });
 
 app.get("/aboutus", async (request, response) => {
@@ -33,6 +35,11 @@ app.get("/aboutus", async (request, response) => {
 
 app.get("/newsevents", async (request, response) => {
   renderPage(response, "newsevents");
+});
+
+app.get("/movies/:movieId", async (request, response) => {
+  const movie = await getMovie(request.params.movieId);
+  renderPage(response, "movie", { movie });
 });
 
 app.use("/static", express.static("./static"));
