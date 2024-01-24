@@ -40,7 +40,7 @@ app.get("/newsevents", async (request, response) => {
 
 app.get("/movies/:movieId", async (request, response) => {
   const movie = await getMovie(request.params.movieId);
-  movie.attributes.intro = marked(movie.attributes.intro);
+  movie.intro = marked(movie.intro);
   renderPage(response, "movie", { movie });
 });
 
