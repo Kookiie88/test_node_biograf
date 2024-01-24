@@ -1,6 +1,7 @@
 import express from "express";
 import { engine } from "express-handlebars";
 import { getMovie, getMovies } from "../src/movies.js";
+import { marked } from "marked";
 
 const app = express();
 app.engine("handlebars", engine());
@@ -39,6 +40,7 @@ app.get("/newsevents", async (request, response) => {
 
 app.get("/movies/:movieId", async (request, response) => {
   const movie = await getMovie(request.params.movieId);
+  movie.attributes.intro = marked(movie.attributes.intro);
   renderPage(response, "movie", { movie });
 });
 
