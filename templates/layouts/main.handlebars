@@ -11,13 +11,17 @@
   <body>
     <header class="header">
       <div class="header__container">
-        <a href="/"><img src="/static/headerLogo.png" alt="Header Logo" class="header__logo" /></a>
+        <a href="/"><img
+            src="../static/assets/headerLogo.png"
+            alt="Header Logo"
+            class="header__logo"
+          /></a>
         <nav class="header__topNavigation">
           {{#each menuLink}}
             <a href="{{this.link}}" class="header__link">{{this.label}}</a>
           {{/each}}
         </nav>
-        <img src="/static/hamburgerButtonOpen.png" class="header__hamburgerButtonOpen" />
+        <img src="../static/assets/hamburgerButtonOpen.png" class="header__hamburgerButtonOpen" />
       </div>
       <nav class="header__hamburgerMenuContainer">
         <div class="header__hamburgerMenu">
@@ -25,7 +29,7 @@
             <a href="{{this.link}}" class="header__link">{{this.label}}</a>
           {{/each}}
           <img
-            src="/static/hamburgerButtonClose.png"
+            src="../static/assets/hamburgerButtonClose.png"
             class="header__hamburgerCloseButton"
             alt="Hamburger menu close button"
           />
@@ -39,7 +43,7 @@
       <div class="footer__container">
         <div class="footer_logoContainer">
           <a href="/"><img
-              src="/static/footerLogo.png"
+              src="../static/assets/footerLogo.png"
               alt="Footer Logo"
               class="footer__logo"
             /></a>

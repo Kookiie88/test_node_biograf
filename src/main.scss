@@ -16,6 +16,11 @@
 
 main {
   min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $colorTwo;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700&display=swap");

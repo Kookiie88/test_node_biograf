@@ -1,10 +1,11 @@
 .sponsors {
   background-color: $colorOne;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 5rem 5rem;
 
   &__headline {
     color: $colorFive;
