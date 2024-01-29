@@ -1,6 +1,6 @@
 import express from "express";
 import { engine } from "express-handlebars";
-import { getMovie, getMovies } from "../src/movies.js";
+import { getMovie, getMovies } from "./movies.js";
 import { marked } from "marked";
 
 const app = express();
@@ -45,6 +45,5 @@ app.get("/movies/:movieId", async (request, response) => {
 });
 
 app.use("/static", express.static("./static"));
-app.use("/src", express.static("./src"));
 
 export default app;

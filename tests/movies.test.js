@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
 import request from "supertest";
-import app from "../static/app";
+import app from "../src/app";
 
 test("Isle of dogs title check", async () => {
   const response = await request(app)
